@@ -3,7 +3,6 @@ version: '3'
 services:
 
   work:
-    build: .
     image: mamemomonga/ubuntu-workspace-jp
     hostname: workspace
     volumes:

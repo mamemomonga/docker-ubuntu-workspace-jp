@@ -25,11 +25,11 @@ bash
 
 	$ echo "UBUNTU_GID=$(id -g)" >  .env
 	$ echo "UBUNTU_UID=$(id -u)" >> .env
-	$ echo "UBUNTU_MOUNT=./ubuntu" >> .env
+	$ echo "UBUNTU_HOME=./ubuntu" >> .env
 
 ## ビルドと起動
 
-	$ docker-compose up --build -d
+	$ docker-compose up -d
 
 ## ubuntuユーザでログイン
 
