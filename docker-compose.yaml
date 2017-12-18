@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  work:
+    build: .
+    image: mamemomonga/ubuntu-workspace-jp
+    hostname: workspace
+    volumes:
+       - '${UBUNTU_HOME}:/home/ubuntu'
+    env_file: .env
+    working_dir: /root
+
