@@ -13,47 +13,39 @@
 
 # 使い方
 
-### Linux
+	$ git clone https://github.com/mamemomonga/docker-ubuntu-workspace-jp.git
+	$ cd docker-ubuntu-workspace-jp
+
+### Linux, macOS
 
 * 現在のUID,GIDをubuntuユーザ・グループとして設定
 * マウントポイントを./ubuntuとする
 
 bash
 
-	echo "UBUNTU_GID=$(id -g)" >  .env
-	echo "UBUNTU_UID=$(id -u)" >> .env
-	echo "UBUNTU_MOUNT=./ubuntu" >> .env
-
-### macOS
-
-* 現在のUID,GIDをubuntuユーザ・グループとして設定
-* マウントポイントを./ubuntuとする
-
-bash
-
-	echo "UBUNTU_GID=$(id -g)" >  .env
-	echo "UBUNTU_UID=$(id -u)" >> .env
-	echo "UBUNTU_MOUNT=./ubuntu" >> .env
+	$ echo "UBUNTU_GID=$(id -g)" >  .env
+	$ echo "UBUNTU_UID=$(id -u)" >> .env
+	$ echo "UBUNTU_MOUNT=./ubuntu" >> .env
 
 ## ビルドと起動
 
-	docker-compose up --build -d
+	$ docker-compose up --build -d
 
 ## ubuntuユーザでログイン
 
-	docker-compose exec work login -f ubuntu
+	$ docker-compose exec work login -f ubuntu
 
 ## rootユーザでログイン
 
-	docker-compose exec work login -f root
+	$ docker-compose exec work login -f root
 
 ## sudoを使えばパスワードなしでubuntuユーザからrootになれます
 
 ## tmux起動
 
-	docker-compose exec -u ubuntu work sh -c 'cd && exec tmux'
+	$ docker-compose exec -u ubuntu work sh -c 'cd && exec tmux'
 
 ## 終了
 
-	docker-compose down
+	$ docker-compose down
 
