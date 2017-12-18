@@ -15,6 +15,7 @@
 
 	$ git clone https://github.com/mamemomonga/docker-ubuntu-workspace-jp.git
 	$ cd docker-ubuntu-workspace-jp
+	$ mkdir ubuntu
 
 ### Linux, macOS
 

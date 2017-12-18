@@ -12,7 +12,9 @@ function do_init {
 		echo "ubuntu ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/wheel_user
 		chmod 600 /etc/sudoers.d/wheel_user
 	fi
-	tar cC /etc/skel . | gosu ubuntu tar xkC /home/ubuntu
+	tar cC /etc/skel . | gosu ubuntu tar xkC /home/ubuntu || true
+	echo
+	echo
 }
 
 function server_stop {
